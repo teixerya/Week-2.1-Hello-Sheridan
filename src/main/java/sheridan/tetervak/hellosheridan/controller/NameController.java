@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import sheridan.tetervak.hellosheridan.domain.User;
 
 @Controller
 public class NameController {
@@ -24,10 +25,9 @@ public class NameController {
                          Model model) {
 
         logger.trace("output() was called");
-
-        model.addAttribute("firstName", firstName);
-        model.addAttribute("lastName", lastName);
-
+        var user = new User(firstName,lastName);
+        logger.debug("user = ");
+        model.addAttribute("user", user);
         return "Output";
     }
 
