@@ -26,7 +26,7 @@ public class NameController {
 
         logger.trace("output() was called");
         var user = new User(firstName,lastName);
-        logger.debug("user = ");
+        logger.debug("user = " + user);
         model.addAttribute("user", user);
         return "Output";
     }
