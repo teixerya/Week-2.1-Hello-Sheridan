@@ -22,7 +22,9 @@ public class NameController {
     public String output(@RequestParam String firstName,
                          @RequestParam String lastName,
                          Model model) {
+
         logger.trace("output() was called");
+
         model.addAttribute("firstName", firstName);
         model.addAttribute("lastName", lastName);
 

@@ -6,6 +6,42 @@
     <title>index</title>
 </head>
 <body>
-    <h1>Hello Sheridan!</h1>
+    <h1>Index</h1>
+    <h2>Pages without Parameters and Path Variables</h2>
+    <ol>
+        <li>
+            <a href="Hello.html" th:href="@{Hello}">Hello</a>
+        </li>
+        <li>
+            <a href="Input.html" th:href="@{Input}">Input</a>
+        </li>
+
+        <h2>Request Parameters in Links</h2>
+        <ul>
+            <li>
+                <a href="Hello.html" th:href="@{Hello(name='Jeff')}">Jeff Og</a>
+            </li>
+            <li>
+                <a href="Hello.html" th:href="@{Hello(name='Bart Simpson')}">Bart Simpson Og</a>
+            </li>
+        </ul>
+
+        <h2>Two Request Parameters</h2>
+        <ul>
+
+            <li>
+                <a href="Output.html" th:href="@{Output(firstName='Bart',lastName='Simpson')}">
+                    Bart Simpson</a>
+            </li>
+            <li>
+                <a href="Output.html" th:href="@{Output(firstName='Lisa',lastName='Simpson')}">
+                    Lisa Simpson</a>
+            </li>
+        </ul>
+
+
+
+    </ol>
+
 </body>
 </html>
