@@ -8,14 +8,21 @@
 <body>
   <h1>Input</h1>
   <h2>Enter your name</h2>
-    <form action="Output.html" th:action="@{Output}">
+    <form action="Output.html" th:action="@{Output}" th:object="${user}">
+
+        <div th:if="${#fields.hasErrors('*')}">
+            <h3>Input Errors</h3>
+            <ul>
+                <li th:each="e: ${#fields.errors('*')}" th:text="${e}">Input Error</li>
+            </ul>
+        </div>
         <p>
             <label for="fn">First Name</label>
-            <input id="fn" th:name="firstName">
+            <input id="fn" th:field="*{firstName}">
         </p>
         <p>
             <label for="ln">Last Name</label>
-            <input id="ln" th:name="lastName">
+            <input id="ln" th:field="*{lastName}">
         </p>
         <p>
             <input type="submit" value="Send">

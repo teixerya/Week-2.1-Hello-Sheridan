@@ -9,6 +9,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 import sheridan.tetervak.hellosheridan.domain.User;
 
 @Controller
@@ -17,9 +18,9 @@ public class NameController {
     private final Logger logger = LoggerFactory.getLogger(NameController.class);
 
     @GetMapping("/Input")
-    public String input(){
+    public ModelAndView input(){
         logger.trace("input() was called");
-        return "Input";
+        return new ModelAndView("Input","user",new User());
     }
 
     @GetMapping("/Output")
@@ -35,7 +36,7 @@ public class NameController {
         }
 
 
-        model.addAttribute("user", user);
+//        model.addAttribute("user", user);
         return "Output";
     }
 
